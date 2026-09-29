@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#9e1b32">
+    <title>Mi Tienda GREY'S ♡ Beauty Shop</title>
+
+    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Poppins:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="cargando">
+
+    <!-- ===== LOADER ===== -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <p class="loader-logo">♡ BEAUTY SHOP ♡</p>
+            <div class="loader-linea"><span></span></div>
+            <p class="loader-texto">Preparando tu experiencia...</p>
+        </div>
+    </div>
+
+    <!-- ===== CURSOR PERSONALIZADO ===== -->
+    <div class="cursor-punto" id="cursorPunto"></div>
+    <div class="cursor-anillo" id="cursorAnillo"></div>
+
+    <!-- ===== BARRA DE PROGRESO DE SCROLL ===== -->
+    <div class="barra-scroll" id="barraScroll"></div>
+
+    <!-- ===== PROMO ===== -->
+    <div class="promo-bar">
+        <div class="promo-track">
+            <span>✨ Envío gratis desde $500</span>
+            <span>💳 3 MSI en todos los productos</span>
+            <span>🔄 30 días para devoluciones</span>
+            <span>💌 Asesoría personalizada gratis</span>
+            <span>✨ Envío gratis desde $500</span>
+            <span>💳 3 MSI en todos los productos</span>
+            <span>🔄 30 días para devoluciones</span>
+            <span>💌 Asesoría personalizada gratis</span>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <p class="logo">♡ BEAUTY SHOP ♡</p>
+
+        <nav>
+            <a href="#" data-cat="todos">Inicio</a>
+            <a href="#" data-cat="Maquillaje">Maquillaje</a>
+            <a href="#" data-cat="Skincare">Skincare</a>
+            <a href="#" data-cat="Cabello">Cabello</a>
+            <a href="#" data-cat="Cuerpo">Cuerpo</a>
+        </nav>
+
+        <div class="header-acciones">
+            <button class="btn-modo" id="btnModo" title="Modo oscuro">🌙</button>
+
+            <button class="boton-carrito" onclick="mostrarCarrito()">
+                🛍️ <span id="contador-carrito">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="banner" id="banner">
+
+        <div class="burbuja b1"></div>
+        <div class="burbuja b2"></div>
+        <div class="burbuja b3"></div>
+        <div class="burbuja b4"></div>
+
+        <div class="banner-texto">
+            <p class="frase">TU BEAUTY · TU ESTILO</p>
+            <h1>Mi Tienda<br><em>GREY'S</em></h1>
+            <p class="banner-sub">
+                Maquillaje, skincare, cabello y cuerpo.<br>
+                Todo lo que tu rutina necesita, en un solo lugar.
+            </p>
+            <div class="banner-botones">
+                <button class="btn-hero" onclick="irAlCatalogo()">Ver productos ♡</button>
+                <button class="btn-ghost" onclick="filtrarDesdeHero('Skincare')">Solo skincare</button>
+            </div>
+
+            <div class="banner-stats">
+                <div><strong>70+</strong><span>productos</span></div>
+                <div><strong>4.9★</strong><span>valoración</span></div>
+                <div><strong>24h</strong><span>envío</span></div>
+            </div>
+        </div>
+
+        <!-- collage flotante -->
+        <div class="collage" id="collage">
+            <div class="flota f1" data-vel="0.05">💄</div>
+            <div class="flota f2" data-vel="0.12">🧴</div>
+            <div class="flota f3" data-vel="0.08">🎀</div>
+            <div class="flota f4" data-vel="0.15">🧼</div>
+        </div>
+
+        <div class="sello">
+            <svg viewBox="0 0 200 200">
+                <defs>
+                    <path id="circulo" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+                </defs>
+                <text>
+                    <textPath href="#circulo">
+                        · BEAUTY SHOP · HECHO CON AMOR · BEAUTY SHOP · HECHO CON AMOR
+                    </textPath>
+                </text>
+            </svg>
+            <span class="sello-corazon">♡</span>
+        </div>
+
+    </section>
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section class="beneficios revelar">
+        <div class="beneficio">
+            <span>🚚</span><h3>Envío gratis</h3><p>En compras desde $500</p>
+        </div>
+        <div class="beneficio">
+            <span>💳</span><h3>Pago seguro</h3><p>Tarjeta, transferencia o efectivo</p>
+        </div>
+        <div class="beneficio">
+            <span>🔄</span><h3>Devoluciones</h3><p>30 días sin preguntas</p>
+        </div>
+        <div class="beneficio">
+            <span>💌</span><h3>Asesoría gratis</h3><p>Te ayudamos a elegir</p>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE DE MARCA ===== -->
+    <div class="marquee revelar">
+        <div class="marquee-track">
+            <span>MAQUILLAJE</span><span>♡</span>
+            <span>SKINCARE</span><span>♡</span>
+            <span>CABELLO</span><span>♡</span>
+            <span>CUERPO</span><span>♡</span>
+            <span>MAQUILLAJE</span><span>♡</span>
+            <span>SKINCARE</span><span>♡</span>
+            <span>CABELLO</span><span>♡</span>
+            <span>CUERPO</span><span>♡</span>
+        </div>
+    </div>
+
+    <!-- ===== HERRAMIENTAS ===== -->
+    <section class="herramientas revelar">
+
+        <div class="buscador-wrap">
+            <input type="text" id="buscador" placeholder="Buscar productos..." onkeyup="buscarProducto()">
+            <span class="icono-lupa">🔎</span>
+        </div>
+
+        <select id="orden" onchange="ordenarProductos()">
+            <option value="default">Ordenar: destacados</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre">Nombre (A–Z)</option>
+        </select>
+
+        <div class="rango">
+            <label>Máximo: <strong id="valorRango">$350</strong></label>
+            <input type="range" id="rango" min="50" max="350" value="350" step="10" oninput="filtrarPorRango()">
+        </div>
+
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="categorias revelar">
+        <h2>Explora nuestra colección ♡</h2>
+        <p class="subtitulo">Encuentra justo lo que buscas</p>
+
+        <div class="botones-categorias">
+            <button data-cat="Maquillaje"><span>💄</span> Maquillaje</button>
+            <button data-cat="Skincare"><span>🧴</span> Skincare</button>
+            <button data-cat="Cabello"><span>🎀</span> Cabello</button>
+            <button data-cat="Cuerpo"><span>🧼</span> Cuidado corporal</button>
+        </div>
+    </section>
+
+    <!-- ===== CATALOGO ===== -->
+    <section class="catalogo" id="catalogo">
+        <h2 id="titulo-catalogo" class="revelar">Todos los productos</h2>
+        <p class="subtitulo" id="contador-resultados"></p>
+        <div class="productos"></div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section class="testimonios revelar">
+        <h2>Lo que dicen de nosotras ♡</h2>
+        <p class="subtitulo">Clientas reales, resultados reales</p>
+
+        <div class="testimonios-grid">
+            <div class="testimonio">
+                <div class="estrellas">★★★★★</div>
+                <p>"Pedí el serum de vitamina C y llegó en 24 horas. La atención fue hermosa, me ayudaron a elegir según mi tipo de piel."</p>
+                <div class="autora"><strong>Andrea M.</strong><span>Ciudad de México</span></div>
+            </div>
+            <div class="testimonio">
+                <div class="estrellas">★★★★★</div>
+                <p>"Los labiales tienen una pigmentación increíble y duran todo el día. Ya voy por mi tercera compra en la tienda."</p>
+                <div class="autora"><strong>Karla R.</strong><span>Guadalajara</span></div>
+            </div>
+            <div class="testimonio">
+                <div class="estrellas">★★★★★</div>
+                <p>"El kit de cuidado corporal fue mi regalo de cumpleaños y quedó perfecto. El empaque llegó impecable."</p>
+                <div class="autora"><strong>Paola V.</strong><span>Monterrey</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter revelar">
+        <div class="newsletter-caja">
+            <p class="frase-clara">ÚNETE AL CLUB</p>
+            <h2>10% de descuento en tu primera compra</h2>
+            <p>Recibe lanzamientos, tips de belleza y promociones exclusivas antes que nadie.</p>
+
+            <form class="newsletter-form" onsubmit="suscribir(event)">
+                <input type="email" id="emailNewsletter" placeholder="tucorreo@ejemplo.com" required>
+                <button type="submit">Suscribirme ♡</button>
+            </form>
+            <p class="aviso">Sin spam. Solo cosas bonitas.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <p class="logo">♡ BEAUTY SHOP ♡</p>
+                <p class="footer-texto">Tu belleza, tu estilo. Productos seleccionados con amor para tu rutina diaria.</p>
+            </div>
+            <div>
+                <h3>Tienda</h3>
+                <a href="#" data-cat="Maquillaje">Maquillaje</a>
+                <a href="#" data-cat="Skincare">Skincare</a>
+                <a href="#" data-cat="Cabello">Cabello</a>
+                <a href="#" data-cat="Cuerpo">Cuerpo</a>
+            </div>
+            <div>
+                <h3>Ayuda</h3>
+                <a href="#">Envíos</a>
+                <a href="#">Devoluciones</a>
+                <a href="#">Contacto</a>
+                <a href="#">Preguntas frecuentes</a>
+            </div>
+            <div>
+                <h3>Síguenos</h3>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+        <p class="copyright">© 2026 Mi Tienda GREY'S · Hecho con ♡</p>
+    </footer>
+
+    <!-- ===== OVERLAY + PANEL CARRITO ===== -->
+    <div class="overlay" id="overlay" onclick="cerrarCarrito()"></div>
+
+    <aside class="carrito" id="carrito">
+        <div class="carrito-header">
+            <h2>🛍️ Tu carrito</h2>
+            <button class="cerrar-carrito" onclick="cerrarCarrito()">✕</button>
+        </div>
+
+        <div class="barra-envio">
+            <p id="texto-envio">Agrega $500 para envío gratis</p>
+            <div class="barra-progreso"><div id="progreso-envio"></div></div>
+        </div>
+
+        <div id="lista-carrito" class="lista-carrito"></div>
+
+        <div class="carrito-footer">
+            <div class="fila-total">
+                <span>Total</span>
+                <h3 id="total-carrito">$0</h3>
+            </div>
+            <button class="btn-comprar-final" onclick="finalizarCompra()">
+                💳 Finalizar compra
+            </button>
+            <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+                💬 Pedir por WhatsApp
+            </button>
+            <p class="nota-segura">🔒 Pago 100% seguro</p>
+        </div>
+    </aside>
+
+    <!-- ===== MODAL VISTA RÁPIDA ===== -->
+    <div class="modal" id="modal">
+        <div class="modal-caja">
+            <button class="cerrar-modal" onclick="cerrarModal()">✕</button>
+            <div class="modal-grid" id="modalContenido"></div>
+        </div>
+    </div>
+
+    <!-- ===== CONFETI ===== -->
+    <canvas id="confeti"></canvas>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
